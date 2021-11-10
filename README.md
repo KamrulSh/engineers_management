@@ -1,2 +1,7 @@
-# engineers project
+# engineers management
+
 Our task is to create engineers profile based on skills, assigned in the project and generate monthly invoices.
+
+### Class diagram
+
+![class](/diagrams/class.png)
