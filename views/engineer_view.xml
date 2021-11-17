@@ -6,14 +6,19 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='mobile_phone']" position="before">
+                <field name="engineer_id"/>
+            </xpath>
             <xpath expr="//field[@name='work_email']" position="after">
                 <field name="skype_id"/>
             </xpath>
-
             <xpath expr="//field[@name='resource_calendar_id']" position="before">
                 <field name="joining_date"/>
+                <field name="engineer_type"/>
             </xpath>
-
+            <xpath expr="//field[@name='gender']" position="after">
+                <field name="blood_group"/>
+            </xpath>
         </field>
     </record>
 
