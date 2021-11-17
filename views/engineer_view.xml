@@ -10,6 +10,9 @@
                 <field name="engineer_id"/>
             </xpath>
             <xpath expr="//field[@name='work_email']" position="after">
+                <field name="position_id"/>
+            </xpath>
+            <xpath expr="//field[@name='work_email']" position="after">
                 <field name="skype_id"/>
             </xpath>
             <xpath expr="//field[@name='resource_calendar_id']" position="before">
