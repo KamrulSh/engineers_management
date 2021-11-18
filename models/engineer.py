@@ -24,6 +24,8 @@ class EngineerInformation(models.Model):
         ('O-', 'O-'),
     ], default="A+")
     position_id = fields.Many2one('engineer.position', string="Role")
+    category_id = fields.Many2one('technical.category', string="Category")
+    technology_id = fields.Many2one('technical.technology', string="Technology")
 
 
 class EngineerPosition(models.Model):
@@ -32,3 +34,19 @@ class EngineerPosition(models.Model):
     _rec_name = 'position_name'
 
     position_name = fields.Char(string="Role")
+
+
+class Category(models.Model):
+    _name = 'technical.category'
+    _description = 'Technical Category'
+    _rec_name = 'category_name'
+
+    category_name = fields.Char(string="Category name")
+
+
+class Technology(models.Model):
+    _name = 'technical.technology'
+    _description = 'Technology'
+    _rec_name = 'technology_name'
+
+    technology_name = fields.Char(string="Technology name")

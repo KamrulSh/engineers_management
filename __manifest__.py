@@ -21,6 +21,8 @@
         # 'security/ir.model.access.csv',
         'views/engineer_view.xml',
         'views/engineer_position_view.xml',
+        'views/technical_category_view.xml',
+        'views/technical_technology_view.xml',
     ],
     'installable': True,
     'application': True,

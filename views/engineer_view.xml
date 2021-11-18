@@ -22,6 +22,12 @@
             <xpath expr="//field[@name='gender']" position="after">
                 <field name="blood_group"/>
             </xpath>
+            <xpath expr="//notebook/page[1]" position="after">
+                <page string="Technical skills">
+                    <field name="category_id"/>
+                    <field name="technology_id"/>
+                </page>
+            </xpath>
         </field>
     </record>
 

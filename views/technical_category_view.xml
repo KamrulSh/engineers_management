@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="technical_category_tree" model="ir.ui.view">
+        <field name="name">technical.category.tree</field>
+        <field name="model">technical.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="category_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="technical_category_form" model="ir.ui.view">
+        <field name="name">technical.category.form</field>
+        <field name="model">technical.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="category_name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
