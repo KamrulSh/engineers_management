@@ -4,7 +4,7 @@
         <field name="name">technical.technology.tree</field>
         <field name="model">technical.technology</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="bottom">
                 <field name="technology_name"/>
             </tree>
         </field>

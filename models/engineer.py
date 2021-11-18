@@ -24,8 +24,7 @@ class EngineerInformation(models.Model):
         ('O-', 'O-'),
     ], default="A+")
     position_id = fields.Many2one('engineer.position', string="Role")
-    category_id = fields.Many2one('technical.category', string="Category")
-    technology_id = fields.Many2one('technical.technology', string="Technology")
+    technicalSkill_ids = fields.One2many('technical.skill', 'skill_id', string="Technical skill")
 
 
 class EngineerPosition(models.Model):
@@ -34,6 +33,23 @@ class EngineerPosition(models.Model):
     _rec_name = 'position_name'
 
     position_name = fields.Char(string="Role")
+
+
+class TechnicalSkill(models.Model):
+    _name = 'technical.skill'
+    _description = 'Technical Skill'
+
+    year_experience = fields.Integer(string="Experience")
+    skill_level = fields.Selection([
+        ('A', 'A'),
+        ('B', 'B'),
+        ('C', 'C'),
+        ('D', 'D'),
+
+    ], default="A")
+    category_id = fields.Many2one('technical.category', string="Category")
+    technology_id = fields.Many2one('technical.technology', string="Technology")
+    skill_id = fields.Many2one('hr.employee', string='skills')
 
 
 class Category(models.Model):

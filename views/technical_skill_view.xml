@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="technical_skill_tree" model="ir.ui.view">
+        <field name="name">technical.skill.tree</field>
+        <field name="model">technical.skill</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="category_id"/>
+                <field name="technology_id"/>
+                <field name="year_experience"/>
+                <field name="skill_level"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="technical_skill_form" model="ir.ui.view">
+        <field name="name">technical.skill.form</field>
+        <field name="model">technical.skill</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="category_id"/>
+                        <field name="technology_id"/>
+                        <field name="year_experience"/>
+                        <field name="skill_level"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

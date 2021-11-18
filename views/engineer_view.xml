@@ -24,8 +24,7 @@
             </xpath>
             <xpath expr="//notebook/page[1]" position="after">
                 <page string="Technical skills">
-                    <field name="category_id"/>
-                    <field name="technology_id"/>
+                    <field name="technicalSkill_ids"/>
                 </page>
             </xpath>
         </field>
