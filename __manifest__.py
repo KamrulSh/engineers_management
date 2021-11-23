@@ -16,13 +16,14 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
-    'depends': ['base', 'hr'],
+    'depends': ['base', 'hr', 'project'],
     'data': [
         # 'security/ir.model.access.csv',
         'views/engineer_view.xml',
         'views/technical_category_view.xml',
         'views/technical_technology_view.xml',
         'views/technical_skill_view.xml',
+        'views/project_view.xml',
     ],
     'installable': True,
     'application': True,

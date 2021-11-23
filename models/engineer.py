@@ -24,6 +24,7 @@ class EngineerInformation(models.Model):
         ('O-', 'O-'),
     ], default="A+")
     technicalSkill_ids = fields.One2many('technical.skill', 'skill_id', string="Technical skill")
+    project_id = fields.Many2one('project.project')
 
 
 class TechnicalSkill(models.Model):
