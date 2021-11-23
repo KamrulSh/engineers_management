@@ -9,9 +9,6 @@
             <xpath expr="//field[@name='mobile_phone']" position="before">
                 <field name="engineer_id"/>
             </xpath>
-            <xpath expr="//field[@name='job_title']" position="replace">
-                <field name="position_id" placeholder="Engineer position"/>
-            </xpath>
             <xpath expr="//field[@name='work_email']" position="after">
                 <field name="skype_id"/>
             </xpath>

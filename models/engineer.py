@@ -23,16 +23,7 @@ class EngineerInformation(models.Model):
         ('O+', 'O+'),
         ('O-', 'O-'),
     ], default="A+")
-    position_id = fields.Many2one('engineer.position', string="Role")
     technicalSkill_ids = fields.One2many('technical.skill', 'skill_id', string="Technical skill")
-
-
-class EngineerPosition(models.Model):
-    _name = 'engineer.position'
-    _description = 'Engineer Position'
-    _rec_name = 'position_name'
-
-    position_name = fields.Char(string="Role")
 
 
 class TechnicalSkill(models.Model):
