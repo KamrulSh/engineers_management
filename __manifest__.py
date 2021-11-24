@@ -24,6 +24,7 @@
         'views/technical_technology_view.xml',
         'views/technical_skill_view.xml',
         'views/project_view.xml',
+        'views/member_info_view.xml',
     ],
     'installable': True,
     'application': True,
