@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_engineer_information,engineer_information,model_engineer_information,base.group_user,1,1,1,1
+access_technical_skill,technical_skill,model_technical_skill,base.group_user,1,1,1,1
+
+access_technical_category,technical_category,model_technical_category,base.group_user,1,1,1,1
+access_technical_technology,technical_technology,model_technical_technology,base.group_user,1,1,1,1
+access_member_information,member_information,model_member_information,base.group_user,1,1,1,1

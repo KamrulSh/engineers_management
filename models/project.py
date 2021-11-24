@@ -5,12 +5,13 @@ class ProjectInformation(models.Model):
     _inherit = 'project.project'
     members_ids = fields.One2many('member.information', 'member_id', string='Engineers Name')
 
+    project_id = fields.Char(string="Project Id", required=True)
     project_status = fields.Selection([
         ('inprogress', 'In progress'),
         ('completed', 'Completed'),
         ('suspended', 'suspended'),
         ('other', 'Other'),
-    ], default="inprogress")
+    ], default="inprogress", required=True)
     department = fields.Many2one('hr.department', string='Department')
     department_head = fields.Many2one('res.partner', string='Department Head')
     sqa_manager = fields.Many2one('res.partner', string='SQA Manager')

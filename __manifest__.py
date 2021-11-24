@@ -18,7 +18,7 @@
     'version': '0.1',
     'depends': ['base', 'hr', 'project'],
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/engineer_view.xml',
         'views/technical_category_view.xml',
         'views/technical_technology_view.xml',
