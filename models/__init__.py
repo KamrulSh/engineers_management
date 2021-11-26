@@ -2,3 +2,4 @@
 
 from . import engineer
 from . import project
+from . import invoice
