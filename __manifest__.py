@@ -16,7 +16,7 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
-    'depends': ['base', 'hr', 'project'],
+    'depends': ['base', 'hr', 'project', 'account'],
     'data': [
         'security/ir.model.access.csv',
         'views/engineer_view.xml',

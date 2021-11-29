@@ -6,26 +6,22 @@ class InvoiceInformation(models.Model):
     _description = 'Invoice Information'
 
     project_id = fields.Many2one('project.project', string='Project name')
-    engineer_id = fields.Many2one('hr.employee', string='Engineer name')
 
-    # @api.onchange("project_id")
-    # def _onchange_engineer(self):
-    #     for record in self:
-    #         print("============>", record.project_id.members_ids)
-    #         # lines = [(5, 0, 0)]
-    #         lines = []
-    #         for line in record.project_id.members_ids:
-    #             val = {
-    #                 'member_id': line.id,
-    #                 'member_price': 213421
-    #             }
-    #             lines.append((0, 0, val))
-    #         print("============>", lines)
-    #         record.invoice_ids = lines
+    @api.onchange("project_id")
+    def _onchange_engineer(self):
+        for record in self:
+            lines = [(5, 0, 0)]
+            for line in record.project_id.members_ids:
+                val = {
+                    'engineer_id': line.name,
+                    'name': line.role.id,
+                }
+                lines.append((0, 0, val))
+            record.invoice_line_ids = lines
 
 
 class InvoiceLineInformation(models.Model):
     _inherit = 'account.move.line'
     _description = 'Invoice Line Information'
 
-    engineer_id = fields.Many2one('hr.employee', string='Engineer name')
+    engineer_id = fields.Many2one('hr.employee', string='Engineer name', readonly=True)
