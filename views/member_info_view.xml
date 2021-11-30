@@ -5,10 +5,10 @@
         <field name="model">member.information</field>
         <field name="arch" type="xml">
             <tree editable="bottom">
-                <field name="name"/>
+                <field name="employee_id"/>
                 <field name="assigned_from"/>
                 <field name="assigned_to"/>
-                <field name="role"/>
+                <field name="role_id"/>
                 <field name="is_manager"/>
             </tree>
         </field>
@@ -21,10 +21,10 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
+                        <field name="employee_id"/>
                         <field name="assigned_from"/>
                         <field name="assigned_to"/>
-                        <field name="role"/>
+                        <field name="role_id"/>
                         <field name="is_manager"/>
                     </group>
                 </sheet>

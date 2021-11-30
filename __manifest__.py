@@ -1,20 +1,17 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "engineers_management",
-    'sequence': 1,
+    'name': "Engineers management",
+    'sequence': 200,
     'summary': """
-        To create engineers profile based on skills, assigned in the project and generate monthly invoices""",
+        Generate invoice for project""",
 
     'description': """
         To create engineers profile based on skills, assigned in the project and generate monthly invoices
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
+    'author': "Niazi & Kamrul",
+    'website': "https://www.bjitgroup.com",
+    'category': 'Accounting',
     'version': '0.1',
     'depends': ['base', 'hr', 'project', 'account'],
     'data': [
