@@ -7,6 +7,7 @@ class InvoiceInformation(models.Model):
 
     project_id = fields.Many2one('project.project', string='Project name')
     partner_id = fields.Many2one('res.partner', string='Customer', related='project_id.partner_id')
+    partner_shipping_id = fields.Many2one('res.partner', string='Address', related='project_id.partner_id')
 
     @api.onchange("project_id")
     def _onchange_project_name(self):
