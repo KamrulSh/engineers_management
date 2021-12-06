@@ -1,5 +1,7 @@
 from odoo import models, fields, api
 
+from odoo.exceptions import ValidationError
+
 
 class ProjectInformation(models.Model):
     _inherit = 'project.project'
@@ -28,6 +30,11 @@ class ProjectInformation(models.Model):
     project_end_date = fields.Date("Project Close Date")
     category_id = fields.Many2one('technical.category', string='Category')
     technology_ids = fields.Many2many('technical.technology', string='Technology')
+
+    @api.constrains('project_start_date', 'project_end_date')
+    def _check_date_validation(self):
+        if self.project_start_date > self.project_end_date:
+            raise ValidationError('Project end date should not be previous date.')
 
 
 class MemberInformation(models.Model):
