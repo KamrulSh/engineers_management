@@ -1,0 +1,385 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* engineers_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-06 04:36+0000\n"
+"PO-Revision-Date: 2021-12-06 04:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__hr_employee__blood_group__ab+
+msgid "AB+"
+msgstr ""
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__actual_effort
+msgid "Actual Effort"
+msgstr "実際の努力"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__assigned_from
+msgid "Assigned From"
+msgstr "割り当て元"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__assigned_to
+msgid "Assigned To"
+msgstr "に割り当てられた"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__blood_group
+msgid "Blood Group"
+msgstr "血液型"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__category_id
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__category_id
+msgid "Category"
+msgstr "カテゴリー"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_technical_category__category_name
+msgid "Category name"
+msgstr "種別名"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__project_project__project_status__completed
+msgid "Completed"
+msgstr "完了"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__hr_employee__engineer_type__contract
+msgid "Contract"
+msgstr "契約"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__create_uid
+#: model:ir.model.fields,field_description:engineers_management.field_technical_category__create_uid
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__create_uid
+#: model:ir.model.fields,field_description:engineers_management.field_technical_technology__create_uid
+msgid "Created by"
+msgstr "によって作成された"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__create_date
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__created_on
+#: model:ir.model.fields,field_description:engineers_management.field_technical_category__create_date
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__create_date
+#: model:ir.model.fields,field_description:engineers_management.field_technical_technology__create_date
+msgid "Created on"
+msgstr "で作成"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_account_move__partner_id
+msgid "Customer"
+msgstr "お客様"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_account_bank_statement_line__partner_shipping_id
+#: model:ir.model.fields,field_description:engineers_management.field_account_move__partner_shipping_id
+#: model:ir.model.fields,field_description:engineers_management.field_account_payment__partner_shipping_id
+msgid "Delivery Address"
+msgstr "配送先住所"
+
+#. module: engineers_management
+#: model:ir.model.fields,help:engineers_management.field_account_bank_statement_line__partner_shipping_id
+#: model:ir.model.fields,help:engineers_management.field_account_move__partner_shipping_id
+#: model:ir.model.fields,help:engineers_management.field_account_payment__partner_shipping_id
+msgid "Delivery address for current invoice."
+msgstr "現在の請求書の配送先住所"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__department_id
+msgid "Department"
+msgstr "デパートメント"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__department_head_id
+msgid "Department Head"
+msgstr "部門長"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_account_move__display_name
+#: model:ir.model.fields,field_description:engineers_management.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__display_name
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__display_name
+#: model:ir.model.fields,field_description:engineers_management.field_technical_category__display_name
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__display_name
+#: model:ir.model.fields,field_description:engineers_management.field_technical_technology__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__engineer_id
+msgid "Engineer ID"
+msgstr "エンジニアID"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__engineer_type
+msgid "Engineer Type"
+msgstr "エンジニアタイプ"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_account_move_line__project_employee_id
+msgid "Engineer name"
+msgstr "エンジニア名"
+
+#. module: engineers_management
+#: model:ir.model,name:engineers_management.model_hr_employee
+msgid "Engineers Information"
+msgstr "エンジニア情報"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__members_ids
+msgid "Engineers Name"
+msgstr "エンジニアの名前"
+
+#. module: engineers_management
+#: model_terms:ir.ui.view,arch_db:engineers_management.project_inherit_id
+msgid "Engineers name"
+msgstr "エンジニアの名前"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__estimated_effort
+msgid "Estimated Effort"
+msgstr "推定作業量"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__year_experience
+msgid "Experience"
+msgstr "経験"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__hr_employee__engineer_type__fulltime
+msgid "Full time"
+msgstr "フルタイム"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_account_move__id
+#: model:ir.model.fields,field_description:engineers_management.field_account_move_line__id
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__id
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__id
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__id
+#: model:ir.model.fields,field_description:engineers_management.field_technical_category__id
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__id
+#: model:ir.model.fields,field_description:engineers_management.field_technical_technology__id
+msgid "ID"
+msgstr ""
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__project_project__project_status__inprogress
+msgid "In progress"
+msgstr "進行中"
+
+#. module: engineers_management
+#: model:ir.model,name:engineers_management.model_account_move
+msgid "Invoice Information"
+msgstr "請求書情報"
+
+#. module: engineers_management
+#: model:ir.model,name:engineers_management.model_account_move_line
+msgid "Invoice Line Information"
+msgstr "請求書明細情報"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__is_manager
+msgid "Is Manager"
+msgstr "マネージャーです"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__joining_date
+msgid "Joining Date"
+msgstr "入会日"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__project_project__project_type__large
+msgid "Large size & High Complexity "
+msgstr "大型で複雑度が高い"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_account_move____last_update
+#: model:ir.model.fields,field_description:engineers_management.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:engineers_management.field_member_information____last_update
+#: model:ir.model.fields,field_description:engineers_management.field_project_project____last_update
+#: model:ir.model.fields,field_description:engineers_management.field_technical_category____last_update
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill____last_update
+#: model:ir.model.fields,field_description:engineers_management.field_technical_technology____last_update
+msgid "Last Modified on"
+msgstr "最終更新日"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__write_uid
+#: model:ir.model.fields,field_description:engineers_management.field_technical_category__write_uid
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__write_uid
+#: model:ir.model.fields,field_description:engineers_management.field_technical_technology__write_uid
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__write_date
+#: model:ir.model.fields,field_description:engineers_management.field_technical_category__write_date
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__write_date
+#: model:ir.model.fields,field_description:engineers_management.field_technical_technology__write_date
+msgid "Last Updated on"
+msgstr "最終更新日"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__member_id
+msgid "Member"
+msgstr "メンバー"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__project_project__project_type__mid
+msgid "Mid Size & Average"
+msgstr "中型＆平均"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__employee_id
+msgid "Name"
+msgstr "名前"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__project_project__project_status__other
+msgid "Other"
+msgstr "他の"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__hr_employee__engineer_type__parttime
+msgid "Part time"
+msgstr "パートタイム"
+
+#. module: engineers_management
+#: model:ir.model,name:engineers_management.model_project_project
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__project_id
+msgid "Project"
+msgstr "計画"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__project_end_date
+msgid "Project Close Date"
+msgstr "プロジェクト終了日"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__project_id
+msgid "Project Id"
+msgstr "プロジェクトID"
+
+#. module: engineers_management
+#: model:ir.model,name:engineers_management.model_member_information
+msgid "Project Information"
+msgstr "プロジェクト情報"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__project_owner_id
+msgid "Project Owner"
+msgstr "プロジェクトオーナー"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__project_start_date
+msgid "Project Start Date"
+msgstr "プロジェクト開始日"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__project_status
+msgid "Project Status"
+msgstr "プロジェクトの状況"
+
+#. module: engineers_management
+#: model_terms:ir.ui.view,arch_db:engineers_management.project_inherit_id
+msgid "Project Technology"
+msgstr "プロジェクトテクノロジー"
+
+#. module: engineers_management
+#: model_terms:ir.ui.view,arch_db:engineers_management.project_inherit_id
+msgid "Project Timeline"
+msgstr "プロジェクトタイムライン"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__project_type
+msgid "Project Type"
+msgstr "プロジェクトタイプ"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_account_bank_statement_line__project_id
+#: model:ir.model.fields,field_description:engineers_management.field_account_move__project_id
+#: model:ir.model.fields,field_description:engineers_management.field_account_payment__project_id
+msgid "Project name"
+msgstr "プロジェクト名"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_member_information__role_id
+msgid "Role"
+msgstr "役割"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__sqa_manager_id
+msgid "SQA Manager"
+msgstr "SQAマネージャー"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__skill_level
+msgid "Skill Level"
+msgstr "スキルレベル"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__skype_id
+msgid "Skype ID"
+msgstr ""
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__project_project__project_type__small
+msgid "Small size & easy"
+msgstr "小さいサイズで簡単"
+
+#. module: engineers_management
+#: model:ir.model,name:engineers_management.model_technical_category
+msgid "Technical Category"
+msgstr "技術カテゴリ"
+
+#. module: engineers_management
+#: model:ir.model,name:engineers_management.model_technical_skill
+msgid "Technical Skill"
+msgstr "技能"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_hr_employee__technicalSkill_ids
+msgid "Technical skill"
+msgstr "技能"
+
+#. module: engineers_management
+#: model_terms:ir.ui.view,arch_db:engineers_management.employee_inherit_id
+msgid "Technical skills"
+msgstr "技術的なスキル"
+
+#. module: engineers_management
+#: model:ir.model,name:engineers_management.model_technical_technology
+#: model:ir.model.fields,field_description:engineers_management.field_project_project__technology_ids
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__technology_id
+msgid "Technology"
+msgstr "テクノロジー"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_technical_technology__technology_name
+msgid "Technology name"
+msgstr "技術名"
+
+#. module: engineers_management
+#: model:ir.model.fields,field_description:engineers_management.field_technical_skill__skill_id
+msgid "skills"
+msgstr "スキル"
+
+#. module: engineers_management
+#: model:ir.model.fields.selection,name:engineers_management.selection__project_project__project_status__suspended
+msgid "suspended"
+msgstr "一時停止"

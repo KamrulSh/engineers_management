@@ -37,6 +37,7 @@
                 <field name="sqa_manager_id"/>
                 <field name="project_owner_id"/>
                 <field name="project_type"/>
+                <field name="project_status"/>
                 <field name="estimated_effort"/>
                 <field name="actual_effort"/>
             </xpath>
