@@ -12,10 +12,10 @@ class ProjectInformation(models.Model):
         ('suspended', 'suspended'),
         ('other', 'Other'),
     ], default="inprogress", required=True)
-    department = fields.Many2one('hr.department', string='Department')
-    department_head = fields.Many2one('res.partner', string='Department Head')
-    sqa_manager = fields.Many2one('res.partner', string='SQA Manager')
-    project_owner = fields.Many2one('res.partner', string='Project Owner')
+    department_id = fields.Many2one('hr.department', string='Department')
+    department_head_id = fields.Many2one('res.partner', string='Department Head')
+    sqa_manager_id = fields.Many2one('res.partner', string='SQA Manager')
+    project_owner_id = fields.Many2one('res.partner', string='Project Owner')
     project_type = fields.Selection([
         ('mid', 'Mid Size & Average'),
         ('small', 'Small size & easy'),
