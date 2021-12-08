@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="engineer_action_dashboard" model="ir.actions.client">
+            <field name="name">Dashboard</field>
+            <field name="tag">engineer_dashboard_tag</field>
+        </record>
+
+        <menuitem id="menu_engineer_dashboard"
+                  name="Engineer Dashboard"
+                  action="engineer_action_dashboard"
+                  web_icon="engineers_management,static/description/icon.png"
+                  sequence="-100" groups="base.group_user"/>
+    </data>
+
+    <template id="assets_backend_dashboard" name="Hr Dashboard assets inherit" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/engineers_management/static/src/js/dashboard.js"/>
+
+        </xpath>
+    </template>
+
+
+</odoo>
