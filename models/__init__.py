@@ -3,3 +3,5 @@
 from . import engineer
 from . import project
 from . import invoice
+from . import dashboard
+

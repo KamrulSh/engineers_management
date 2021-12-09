@@ -2,10 +2,30 @@
 <templates id="template" xml:space="preserve">
     <t t-name="EngineerDashboardMain">
         <div class="oh_dashboards">
-            <div class="container-fluid o_hr_dashboard">
-                <h1>
-                    Hello World
-                </h1>
+            <div class="col-sm-7 col-lg-7">
+                <div class="col-sm-12 col-lg-12 graph_view" style="padding:0">
+                    <div class="text-color hr-chart-1">
+                        <div class="oh-card-body pb-0">
+                            <h4 class="mb-0">
+                            </h4>
+                            <div class="oh-ribbon"><h3>Departments</h3></div>
+                        </div>
+                        <div class="emp_graph"/>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="col-sm-7 col-lg-7">
+                <div class="col-sm-12 col-lg-12 graph_view" style="padding:0">
+                    <div class="text-color hr-chart-1">
+                        <div class="oh-card-body pb-0">
+                            <h4 class="mb-0">
+                            </h4>
+                            <div class="oh-ribbon"><h3>Templates</h3></div>
+                        </div>
+                        <div class="div_template"/>
+                    </div>
+                </div>
             </div>
         </div>
     </t>

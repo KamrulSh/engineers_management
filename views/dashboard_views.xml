@@ -15,7 +15,10 @@
     <template id="assets_backend_dashboard" name="Hr Dashboard assets inherit" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/engineers_management/static/src/js/dashboard.js"/>
-
+            <script type="text/javascript" src="/engineers_management/static/src/js/lib/d3.min.js"/>
+            <link rel="stylesheet" href="/engineers_management/static/src/css/dashboard.css"/>
+            <script type="text/javascript" src="/engineers_management/static/src/js/lib/d3.v4.js"/>
+            <script type="text/javascript" src="/engineers_management/static/src/js/lib/d3-scale-chromatic.v1.min.js"/>
         </xpath>
     </template>
 
