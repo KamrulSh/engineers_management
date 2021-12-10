@@ -6,7 +6,13 @@ class Employee(models.Model):
 
     @api.model
     def get_dept_employee(self):
-        data = [{'label': "Java developer", 'value': 3}, {'label': "Odoo developer", 'value': 5},
-                {'label': "JS developer", 'value': 2},
-                {'label': "iOS developer", 'value': 4}]
+        cr = self._cr
+        cr.execute("""select department_id, hr_department.name,count(*) 
+            from hr_employee join hr_department on hr_department.id=hr_employee.department_id 
+            group by hr_employee.department_id,hr_department.name""")
+        fetch_data = cr.fetchall()
+        data = []
+        for i in range(0, len(fetch_data)):
+            data.append({'label': fetch_data[i][1], 'value': fetch_data[i][2]})
+
         return data

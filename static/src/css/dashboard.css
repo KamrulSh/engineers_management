@@ -5,4 +5,20 @@
 .oh_dashboards {
     padding-top: 15px;
     background-color: #f8faff !important;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.emp_graph {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+table.legend {
+    margin-top: 20px;
 }
