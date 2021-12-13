@@ -12,6 +12,7 @@ odoo.define('engineers_management.DashboardRewrite', function (require) {
             var self = this;
             return this._super().then(function () {
                 self.render_department_employee();
+                self.render_department_employee_bar();
                 self.render_tooltip_template();
             });
         },
@@ -68,6 +69,75 @@ odoo.define('engineers_management.DashboardRewrite', function (require) {
                         return d.value;
                     });
             });
+        },
+
+        render_department_employee_bar: function () {
+            // set the dimensions and margins of the graph
+            var margin = {top: 30, right: 30, bottom: 70, left: 60},
+                width = 460 - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom;
+            var element = this.$('.emp_bar');
+
+            // append the svg object to the body of the page
+            var svg = d3.select(element[0])
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+
+            // Parse the Data
+            rpc.query({
+                model: "hr.employee",
+                method: "get_dept_employee",
+            }).then(function (data) {
+                // X axis
+                var x = d3.scaleBand()
+                    .range([0, width])
+                    .domain(data.map(function (d) {
+                        return d.label;
+                    }))
+                    .padding(0.2);
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x))
+                    .selectAll("text")
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end");
+
+                // max value of employee value
+                var maxY = Math.max.apply(Math, data.map(function (v) {
+                    return v.value;
+                }))
+
+                // Add Y axis
+                var y = d3.scaleLinear()
+                    .range([height, 0])
+                    .domain(data.map(function (d) {
+                        return d.value;
+                    }))
+                    .domain([0, maxY]);
+                svg.append("g")
+                    .call(d3.axisLeft(y));
+
+                // Bars
+                svg.selectAll("mybar")
+                    .data(data)
+                    .enter()
+                    .append("rect")
+                    .attr("x", function (d) {
+                        return x(d.label);
+                    })
+                    .attr("y", function (d) {
+                        return y(d.value);
+                    })
+                    .attr("width", x.bandwidth())
+                    .attr("height", function (d) {
+                        return height - y(d.value);
+                    })
+                    .attr("fill", "#69b3a2")
+            })
         },
 
         render_tooltip_template: function () {

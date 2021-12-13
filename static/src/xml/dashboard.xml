@@ -8,9 +8,21 @@
                         <div class="oh-card-body pb-0">
                             <h4 class="mb-0">
                             </h4>
-                            <div class="oh-ribbon"><h3>Departments</h3></div>
+                            <div class="oh-ribbon"><h3>Department wise Employee</h3></div>
                         </div>
                         <div class="emp_graph"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12 col-lg-12 graph_view" style="padding:0">
+                    <div class="text-color hr-chart-1">
+                        <div class="oh-card-body pb-0">
+                            <h4 class="mb-0">
+                            </h4>
+                            <div class="oh-ribbon"><h3>Department wise Employee</h3></div>
+                        </div>
+                        <div class="emp_bar"/>
                     </div>
                 </div>
             </div>

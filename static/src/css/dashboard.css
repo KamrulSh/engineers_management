@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
 }
 
 .emp_graph {
@@ -17,6 +17,14 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+    justify-content: center;
+}
+
+.emp_bar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
 }
 
