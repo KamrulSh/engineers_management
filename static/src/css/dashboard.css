@@ -3,22 +3,27 @@
 }
 
 .oh_dashboards {
-    padding-top: 15px;
+    padding: 15px;
     background-color: #f8faff !important;
     text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: stretch;
 }
 
 .emp_graph {
-    padding-top: 15px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
 }
 
 table.legend {
-    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.oh-ribbon {
+    margin-top: 30px;
 }
