@@ -8,8 +8,8 @@
         <menuitem id="menu_engineer_dashboard"
                   name="Engineer Dashboard"
                   action="engineer_action_dashboard"
-                  web_icon="engineers_management,static/description/icon.png"
-                  sequence="-100" groups="base.group_user"/>
+                  parent="project.menu_main_pm"
+                  sequence="0" groups="base.group_user"/>
     </data>
 
     <template id="assets_backend_dashboard" name="Hr Dashboard assets inherit" inherit_id="web.assets_backend">
