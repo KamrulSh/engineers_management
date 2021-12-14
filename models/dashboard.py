@@ -2,14 +2,14 @@ from odoo import models, fields, api, _
 
 
 class Employee(models.Model):
-    _inherit = 'hr.employee'
+    _inherit = 'project.project'
 
     @api.model
     def get_dept_employee(self):
         cr = self._cr
         cr.execute("""select department_id, hr_department.name,count(*) 
-            from hr_employee join hr_department on hr_department.id=hr_employee.department_id 
-            group by hr_employee.department_id,hr_department.name""")
+            from project_project join hr_department on hr_department.id=project_project.department_id 
+            group by project_project.department_id,hr_department.name""")
         fetch_data = cr.fetchall()
         data = []
         for i in range(0, len(fetch_data)):

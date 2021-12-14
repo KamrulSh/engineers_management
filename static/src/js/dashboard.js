@@ -28,7 +28,7 @@ odoo.define('engineers_management.DashboardRewrite', function (require) {
                 '#ffa433', '#ffc25b', '#f8e54b'];
             var color = d3.scale.ordinal().range(colors);
             rpc.query({
-                model: "hr.employee",
+                model: "project.project",
                 method: "get_dept_employee",
             }).then(function (data) {
                 var segColor = {};
@@ -76,6 +76,9 @@ odoo.define('engineers_management.DashboardRewrite', function (require) {
             var margin = {top: 30, right: 30, bottom: 70, left: 60},
                 width = 460 - margin.left - margin.right,
                 height = 400 - margin.top - margin.bottom;
+            var colors = ['#70cac1', '#659d4e', '#208cc2', '#4d6cb1', '#584999', '#8e559e', '#cf3650', '#f65337', '#fe7139',
+                '#ffa433', '#ffc25b', '#f8e54b'];
+            var color = d3.scale.ordinal().range(colors);
             var element = this.$('.emp_bar');
 
             // append the svg object to the body of the page
@@ -89,7 +92,7 @@ odoo.define('engineers_management.DashboardRewrite', function (require) {
 
             // Parse the Data
             rpc.query({
-                model: "hr.employee",
+                model: "project.project",
                 method: "get_dept_employee",
             }).then(function (data) {
                 // X axis
@@ -136,7 +139,9 @@ odoo.define('engineers_management.DashboardRewrite', function (require) {
                     .attr("height", function (d) {
                         return height - y(d.value);
                     })
-                    .attr("fill", "#69b3a2")
+                    .attr("fill", function (d, i) {
+                        return color(i)
+                    });
             })
         },
 
