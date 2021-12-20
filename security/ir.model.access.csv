@@ -4,3 +4,4 @@ access_technical_skill,technical_skill,model_technical_skill,base.group_user,1,1
 access_technical_category,technical_category,model_technical_category,base.group_user,1,1,1,1
 access_technical_technology,technical_technology,model_technical_technology,base.group_user,1,1,1,1
 access_member_information,member_information,model_member_information,base.group_user,1,1,1,1
+access_project_dashboard_wizard,project_dashboard_wizard,model_project_dashboard_wizard,base.group_user,1,1,1,1
