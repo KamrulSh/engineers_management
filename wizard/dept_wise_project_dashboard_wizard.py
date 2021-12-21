@@ -39,8 +39,8 @@ class ProjectDashboard(models.TransientModel):
                             group by project_project.department_id,hr_department.name""")
         fetch_data = cr.fetchall()
         for i in range(0, len(fetch_data)):
-            column_value = [fetch_data[i][1], fetch_data[i][2]]
-            body += tr.format("".join(map(td.format, column_value)))
-
+            if self.department_id.id == fetch_data[i][0]:
+                column_value = [fetch_data[i][1], fetch_data[i][2]]
+                body += tr.format("".join(map(td.format, column_value)))
         view_dashboard = table.format(thead=head, tbody=body)
         self.write({'dashboard': view_dashboard})

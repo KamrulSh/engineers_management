@@ -24,6 +24,7 @@
         <field name="res_model">project.dashboard.wizard</field>
         <field name="view_mode">form</field>
         <field name="view_id" ref="project_dashboard_form"/>
+        <field name="target">inline</field>
     </record>
 
     <menuitem id="menu_dashboard_new"
