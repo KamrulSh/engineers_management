@@ -8,15 +8,6 @@ class ProjectDashboard(models.TransientModel):
     dashboard = fields.Html("Report dashboard")
 
     def project_dashboard_line_generate(self):
-        cr = self._cr
-        cr.execute("""select department_id, hr_department.name,count(*) 
-                    from project_project join hr_department on hr_department.id=project_project.department_id 
-                    group by project_project.department_id,hr_department.name""")
-        fetch_data = cr.fetchall()
-        data = []
-        for i in range(0, len(fetch_data)):
-            data.append([fetch_data[i][1], fetch_data[i][2]])
-
         table = """
                 <table border="1" class="o_list_view table table-condensed table-striped o_list_view_ungrouped">
                     <thead>
@@ -41,7 +32,15 @@ class ProjectDashboard(models.TransientModel):
         body = ''
         column_header = ['Department', 'Project']
         head += thead.format(th="".join(map(th.format, column_header)))
-        body += tr.format("".join(map(td.format, data[0], data[1])))
+
+        cr = self._cr
+        cr.execute("""select department_id, hr_department.name,count(*) 
+                            from project_project join hr_department on hr_department.id=project_project.department_id 
+                            group by project_project.department_id,hr_department.name""")
+        fetch_data = cr.fetchall()
+        for i in range(0, len(fetch_data)):
+            column_value = [fetch_data[i][1], fetch_data[i][2]]
+            body += tr.format("".join(map(td.format, column_value)))
 
         view_dashboard = table.format(thead=head, tbody=body)
         self.write({'dashboard': view_dashboard})
