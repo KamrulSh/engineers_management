@@ -1,11 +1,13 @@
 from odoo import models, fields, api
 
+from odoo.exceptions import ValidationError
+
 
 class EngineerInformation(models.Model):
     _inherit = 'hr.employee'
     _description = 'Engineers Information'
 
-    engineer_id = fields.Integer(string="Engineer ID", tracking=True)
+    engineer_id = fields.Char(string="Engineer ID")
     engineer_type = fields.Selection([
         ('parttime', 'Part time'),
         ('fulltime', 'Full time'),
@@ -25,6 +27,19 @@ class EngineerInformation(models.Model):
     ], default="A+")
     technicalSkill_ids = fields.One2many('technical.skill', 'skill_id', string="Technical skill")
     project_id = fields.Many2one('project.project')
+
+    @api.constrains('engineer_id')
+    def _check_engineer_id_validation(self):
+        if self.engineer_id.isnumeric():
+            digit = len(self.engineer_id)
+            zero = 5 - digit
+            if digit < 5:
+                id_after_zero = "0" * zero + self.engineer_id
+                self.engineer_id = id_after_zero
+            elif digit > 5:
+                raise ValidationError('Digit can not be greater than 5.')
+        else:
+            raise ValidationError('Not number.')
 
 
 class TechnicalSkill(models.Model):
