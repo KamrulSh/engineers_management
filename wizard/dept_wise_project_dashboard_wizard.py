@@ -20,7 +20,7 @@ class ProjectDashboard(models.TransientModel):
                 """
 
         thead = """
-                    <tr style="text-align: right;">
+                    <tr style="text-align: center;">
                         {th}
                     </tr>
                 """
