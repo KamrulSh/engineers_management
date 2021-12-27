@@ -45,4 +45,28 @@
         </field>
     </record>
 
+    <record id="project_view_calendar" model="ir.ui.view">
+        <field name="name">project.calendar.calendar</field>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <calendar string="Project Calendar"
+                      date_start="project_start_date"
+                      date_stop="project_end_date"
+                      event_open_popup="true"
+                      mode="month"
+                      color="project_id"
+                      quick_add="False">
+                <field name="project_id"/>
+                <field name="project_start_date"/>
+                <field name="project_end_date"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="project.open_view_project_all_config" model="ir.actions.act_window">
+        <field name="name">Calendar</field>
+        <field name="res_model">project.project</field>
+        <field name="view_mode">calendar</field>
+    </record>
+
 </odoo>
