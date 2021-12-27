@@ -63,10 +63,34 @@
         </field>
     </record>
 
+    <record id="project_view_pivot" model="ir.ui.view">
+        <field name="name">project.pivot.view</field>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <pivot string="Project pivot">
+                <field name="project_id" type="col"/>
+                <field name="department_id" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="project_view_graph" model="ir.ui.view">
+        <field name="name">project.graph.view</field>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <graph string="Project graph">
+                <field name="department_id" type="row" group="True"/>
+                <field name="project_id"/>
+                <field name="project_start_date"/>
+                <field name="project_end_date"/>
+            </graph>
+        </field>
+    </record>
+
     <record id="project.open_view_project_all_config" model="ir.actions.act_window">
         <field name="name">Calendar</field>
         <field name="res_model">project.project</field>
-        <field name="view_mode">calendar</field>
+        <field name="view_mode">calendar,pivot,graph</field>
     </record>
 
 </odoo>
