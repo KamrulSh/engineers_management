@@ -68,8 +68,9 @@
         <field name="model">project.project</field>
         <field name="arch" type="xml">
             <pivot string="Project pivot">
-                <field name="project_id" type="col"/>
                 <field name="department_id" type="row"/>
+                <field name="project_status" type="col"/>
+                <field name="user_id" type="col"/>
             </pivot>
         </field>
     </record>
@@ -78,19 +79,17 @@
         <field name="name">project.graph.view</field>
         <field name="model">project.project</field>
         <field name="arch" type="xml">
-            <graph string="Project graph">
-                <field name="department_id" type="row" group="True"/>
-                <field name="project_id"/>
-                <field name="project_start_date"/>
-                <field name="project_end_date"/>
+            <graph>
+                <field name="department_id" type="row"/>
+                <field name="actual_effort" type="measure"/>
             </graph>
         </field>
     </record>
 
     <record id="project.open_view_project_all_config" model="ir.actions.act_window">
-        <field name="name">Calendar</field>
+        <field name="name">Projects</field>
         <field name="res_model">project.project</field>
-        <field name="view_mode">calendar,pivot,graph</field>
+        <field name="view_mode">tree,form,calendar,graph,pivot</field>
     </record>
 
 </odoo>
