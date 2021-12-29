@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view Action for Project Task Details -->
+    <record id="action_project_task_details_view" model="ir.actions.act_window">
+        <field name="name">Project task</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">project.task.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+    </record>
+
+    <record id="action_project_task_details_tree" model="ir.ui.view">
+        <field name="name">Project Task Details</field>
+        <field name="model">project.task.details</field>
+        <field name="arch" type="xml">
+            <tree string="Project Task" create="false">
+                <field name='project'/>
+                <field name='task'/>
+                <field name='manager'/>
+                <field name='partner'/>
+                <field name='date_deadline'/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem name="Project Task Details"
+              action="action_project_task_details_view"
+              id="menu_project_task_details_action"
+              parent="project.menu_project_config"
+              sequence="4"/>
+
+</odoo>

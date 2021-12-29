@@ -25,6 +25,7 @@
         'views/invoice_view.xml',
         'views/dashboard_views.xml',
         'wizard/dept_wise_project_dashboard_wizard.xml',
+        'report/project_report.xml',
     ],
     'qweb': ['static/src/xml/dashboard.xml'],
     'installable': True,
