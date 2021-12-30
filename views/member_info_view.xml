@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <tree editable="bottom">
                 <field name="employee_id"/>
+                <field name="department_id"/>
                 <field name="assigned_from"/>
                 <field name="assigned_to"/>
                 <field name="role_id"/>
@@ -24,12 +25,13 @@
                 <sheet>
                     <group>
                         <field name="employee_id"/>
+                        <field name="department_id"/>
                         <field name="assigned_from"/>
                         <field name="assigned_to"/>
                         <field name="role_id"/>
                         <field name="is_manager"/>
                         <field name="planned_hour"/>
-                        <field name="worked_hour"/>
+                        <field name="worked_hour"/>department_id
                     </group>
                 </sheet>
             </form>

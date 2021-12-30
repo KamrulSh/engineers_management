@@ -47,3 +47,4 @@ class MemberInformation(models.Model):
     member_id = fields.Many2one('project.project')
     planned_hour = fields.Float(string='Planned Hour')
     worked_hour = fields.Float(string='Worked Hour')
+    department_id = fields.Many2one('hr.department', string='Department', related='employee_id.department_id')
