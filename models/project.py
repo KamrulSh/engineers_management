@@ -23,8 +23,6 @@ class ProjectInformation(models.Model):
         ('small', 'Small size & easy'),
         ('large', 'Large size & High Complexity '),
     ], default="mid")
-    estimated_effort = fields.Float(string='Estimated Effort')
-    actual_effort = fields.Float(string='Actual Effort')
     created_on = fields.Datetime("Created on", readonly=True, index=True, default=fields.Datetime.now())
     project_start_date = fields.Date("Project Start Date")
     project_end_date = fields.Date("Project Close Date")
@@ -47,3 +45,5 @@ class MemberInformation(models.Model):
     role_id = fields.Many2one('hr.job', string="Role")
     is_manager = fields.Boolean(string="Is Manager")
     member_id = fields.Many2one('project.project')
+    planned_hour = fields.Float(string='Planned Hour')
+    worked_hour = fields.Float(string='Worked Hour')

@@ -10,6 +10,8 @@
                 <field name="assigned_to"/>
                 <field name="role_id"/>
                 <field name="is_manager"/>
+                <field name="planned_hour"/>
+                <field name="worked_hour"/>
             </tree>
         </field>
     </record>
@@ -26,6 +28,8 @@
                         <field name="assigned_to"/>
                         <field name="role_id"/>
                         <field name="is_manager"/>
+                        <field name="planned_hour"/>
+                        <field name="worked_hour"/>
                     </group>
                 </sheet>
             </form>

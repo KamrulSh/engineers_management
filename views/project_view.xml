@@ -38,8 +38,7 @@
                 <field name="project_owner_id"/>
                 <field name="project_type"/>
                 <field name="project_status"/>
-                <field name="estimated_effort"/>
-                <field name="actual_effort"/>
+
             </xpath>
 
         </field>
@@ -81,7 +80,6 @@
         <field name="arch" type="xml">
             <graph>
                 <field name="department_id" type="row"/>
-                <field name="actual_effort" type="measure"/>
             </graph>
         </field>
     </record>
