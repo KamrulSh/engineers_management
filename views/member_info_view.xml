@@ -31,7 +31,7 @@
                         <field name="role_id"/>
                         <field name="is_manager"/>
                         <field name="planned_hour"/>
-                        <field name="worked_hour"/>department_id
+                        <field name="worked_hour"/>
                     </group>
                 </sheet>
             </form>
