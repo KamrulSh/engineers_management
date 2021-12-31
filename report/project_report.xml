@@ -30,13 +30,8 @@
         <field name="model">project.info.details</field>
         <field name="arch" type="xml">
             <pivot string="Project info pivot">
-                <field name='project_name' type="row"/>
-                <field name='employee' type="col"/>
-                <field name='department' type="col"/>
-                <field name='planned_hour' type="col"/>
-                <field name='worked_hour' type="col"/>
-                <field name='assigned_from' type="col"/>
-                <field name='assigned_to' type="col"/>
+                <field name='project_name' type="col"/>
+                <field name='employee' type="row"/>
             </pivot>
         </field>
     </record>
@@ -47,10 +42,7 @@
         <field name="arch" type="xml">
             <graph string="Project info graph">
                 <field name='project_name' type="row"/>
-                <field name='employee' type="row"/>
-                <field name='department' type="measure"/>
-                <field name='planned_hour' type="measure"/>
-                <field name='worked_hour' type="measure"/>
+                <field name='employee' type="measure"/>
             </graph>
         </field>
     </record>
