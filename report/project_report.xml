@@ -7,6 +7,7 @@
         <field name="res_model">project.info.details</field>
         <field name="view_mode">tree,form,pivot,graph</field>
         <field name="view_id" eval="False"/>
+        <field name="context">{}</field>
     </record>
 
     <record id="project_info_details_tree" model="ir.ui.view">
@@ -22,6 +23,17 @@
                 <field name='assigned_from'/>
                 <field name='assigned_to'/>
             </tree>
+        </field>
+    </record>
+
+    <record id="project_info_details_search" model="ir.ui.view">
+        <field name="name">project.info.search</field>
+        <field name="model">project.info.details</field>
+        <field name="arch" type="xml">
+            <search string="Project info search">
+                <filter name="group_project_id" string="Project" icon="terp-partner"
+                        context="{'group_by':'project_name'}"/>
+            </search>
         </field>
     </record>
 
