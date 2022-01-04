@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_project_pdf_print" model="ir.actions.report">
+        <field name="name">Project Details PDF</field>
+        <field name="model">project.project</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">engineers_management.project_report_pdf</field>
+        <field name="report_file">engineers_management.project_report_pdf</field>
+        <field name="binding_model_id" ref="model_project_project"/>
+    </record>
+
+    <template id="project_report_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 align="center">Project Report</h2>
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table class="table table-condensed" style="border: 2px solid black !important;">
+                                    <tr>
+                                        <td width="100%">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Project Name</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Created on</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.created_on"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Project start date</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.project_start_date"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Project end date</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.project_end_date"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Project Id</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.project_id"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Project Manager</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.user_id"/>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <span><h3 align="center">Engineers Details</h3></span>
+                                <table class="table table-condensed" style="border: 2px solid black !important;">
+                                    <thead>
+                                        <tr>
+                                            <th name="th_checkupdate" class="text-left">
+                                                <span>Engineers name</span>
+                                            </th>
+                                            <th name="th_status" class="text-left">
+                                                <span>Department</span>
+                                            </th>
+                                            <th name="th_doctor" class="text-left">
+                                                <span>Assigned from</span>
+                                            </th>
+                                            <th name="th_doctor" class="text-left">
+                                                <span>Assigned to</span>
+                                            </th>
+                                            <th name="th_doctor" class="text-left">
+                                                <span>Role</span>
+                                            </th>
+                                            <th name="th_doctor" class="text-left">
+                                                <span>Planned Hours</span>
+                                            </th>
+                                            <th name="th_doctor" class="text-left">
+                                                <span>Worked Hours</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <t t-foreach="o.members_ids" t-as="line">
+                                        <tr>
+                                            <td>
+                                                <span t-field="line.employee_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.department_id"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="line['assigned_from']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="line['assigned_to']"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.role_id"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="line['planned_hour']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="line['worked_hour']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
