@@ -13,7 +13,7 @@
     'website': "https://www.bjitgroup.com",
     'category': 'Accounting',
     'version': '0.1',
-    'depends': ['base', 'hr', 'project', 'account'],
+    'depends': ['base', 'hr', 'project', 'account', 'report_xlsx'],
     'data': [
         'security/ir.model.access.csv',
         'views/engineer_view.xml',
@@ -26,6 +26,7 @@
         'views/dashboard_views.xml',
         'wizard/dept_wise_project_dashboard_wizard.xml',
         'report/project_report.xml',
+        'report/project_report_xlsx.xml',
         'report/project_report_pdf.xml',
     ],
     'qweb': ['static/src/xml/dashboard.xml'],
