@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="project_invoice_form" model="ir.ui.view">
+        <field name="name">project.invoice.form</field>
+        <field name="model">project.invoice.wizard</field>
+        <field name='arch' type='xml'>
+            <form string="Project Invoice" create="false" edit="false" class="project-dashboard-form">
+                <group>
+                    <field name="project_id"/>
+
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="project_invoice_action_new" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">project.invoice.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="project_invoice_form"/>
+        <field name="target">inline</field>
+    </record>
+
+    <menuitem id="menu_invoice_project"
+              parent="project.menu_project_report"
+              name="Project Invoice"
+              action="project_invoice_action_new"/>
+</odoo>

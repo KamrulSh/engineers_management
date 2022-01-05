@@ -5,3 +5,4 @@ access_technical_technology,technical_technology,model_technical_technology,base
 access_member_information,member_information,model_member_information,base.group_user,1,1,1,1
 access_project_dashboard_wizard,project_dashboard_wizard,model_project_dashboard_wizard,base.group_user,1,1,1,1
 access_project_info_details,project_info_details,model_project_info_details,base.group_user,1,0,0,0
+access_project_invoice_wizard,project_invoice_wizard,model_project_invoice_wizard,base.group_user,1,1,1,1
