@@ -8,14 +8,20 @@
             <form string="Project Invoice" create="false" edit="false" class="project-dashboard-form">
                 <group>
                     <field name="project_id"/>
-
+                </group>
+                <footer>
+                    <button name="action_print_report" type="object" string="Print" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+                <group>
+                    <field name="invoices" readonly="1"/>
                 </group>
             </form>
         </field>
     </record>
 
     <record id="project_invoice_action_new" model="ir.actions.act_window">
-        <field name="name">Dashboard</field>
+        <field name="name">Invoice</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">project.invoice.wizard</field>
         <field name="view_mode">form</field>
