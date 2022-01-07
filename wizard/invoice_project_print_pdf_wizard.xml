@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_invoice_wizard" model="ir.actions.report">
+        <field name="name">Project Invoice</field>
+        <field name="model">project.invoice.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">engineers_management.report_project_invoice</field>
+        <field name="report_file">engineers_management.report_project_invoice</field>
+        <field name="binding_model_id" ref="model_project_invoice_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_project_invoice">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2 align="center">Invoice Project</h2>
+                </div>
+                <table class="table table-condensed" style="border: 2px solid black !important;">
+                    <tr>
+                        <td>Project Name: </td>
+                        <td>
+                            <t t-esc="form_data['project_id'][1]"/>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <table class="table table-condensed" style="border: 2px solid black !important;">
+                    <thead>
+                        <tr>
+                            <th name="th_invoice_name" class="text-left">
+                                <span>Invoice ID </span>
+                            </th>
+                            <th name="th_employee_name" class="text-left">
+                                <span>Employee name</span>
+                            </th>
+                            <th name="th_price_unit" class="text-left">
+                                <span>Price unit</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="invoices_data" t-as="line">
+                        <tr>
+                            <td>
+                                <t t-esc="line['line_name']"/>
+                            </td>
+                            <td>
+                                <t t-esc="line['employee_name']"/>
+                            </td>
+                            <td>
+                                <t t-esc="line['price_unit']"/>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+            </t>
+        </t>
+    </template>
+
+</odoo>

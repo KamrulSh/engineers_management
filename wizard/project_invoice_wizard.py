@@ -50,11 +50,17 @@ class ProjectDashboard(models.TransientModel):
             ORDER BY line_name
 --             )
         """)
-        fetch_data = self._cr.fetchall()
-        # print(fetch_data)
+        invoices_data = self._cr.dictfetchall()
+        data = {
+            'form_data': self.read()[0],
+            'invoices_data': invoices_data
+        }
+        return self.env.ref('engineers_management.action_invoice_wizard').report_action(self, data=data)
+
         for i in range(0, len(fetch_data)):
             # if self.department_id.id == fetch_data[i][0]:
             column_value = [fetch_data[i][2], fetch_data[i][3], fetch_data[i][4]]
             body += tr.format("".join(map(td.format, column_value)))
         view_invoices = table.format(thead=head, tbody=body)
         self.write({'invoices': view_invoices})
+
