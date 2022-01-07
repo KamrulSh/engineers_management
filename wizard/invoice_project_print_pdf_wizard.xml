@@ -15,46 +15,72 @@
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
                 <div class="page">
-                    <h2 align="center">Invoice Project</h2>
+                    <h2 align="center">Project wise Invoice</h2>
                 </div>
                 <table class="table table-condensed" style="border: 2px solid black !important;">
                     <tr>
-                        <td>Project Name: </td>
+                        <td>Project Name:</td>
                         <td>
                             <t t-esc="form_data['project_id'][1]"/>
                         </td>
-
                     </tr>
-
                 </table>
 
                 <table class="table table-condensed" style="border: 2px solid black !important;">
                     <thead>
                         <tr>
                             <th name="th_invoice_name" class="text-left">
-                                <span>Invoice ID </span>
+                                <span>Invoice ID</span>
+                            </th>
+                            <th name="th_invoice_date" class="text-left">
+                                <span>Invoice Date</span>
+                            </th>
+                            <th name="th_customer_name" class="text-left">
+                                <span>Customer Name</span>
                             </th>
                             <th name="th_employee_name" class="text-left">
-                                <span>Employee name</span>
+                                <span>Engineer name</span>
+                            </th>
+                            <th name="th_employee_quantity" class="text-left">
+                                <span>Quantity</span>
                             </th>
                             <th name="th_price_unit" class="text-left">
                                 <span>Price unit</span>
                             </th>
                         </tr>
                     </thead>
+                    <t t-set="invoice_count" t-value="0"/>
                     <t t-foreach="invoices_data" t-as="line">
+                        <t t-set="invoice_count" t-value="invoice_count + line['price_unit']"/>
                         <tr>
                             <td>
-                                <t t-esc="line['line_name']"/>
+                                <t t-esc="line['invoice_name']"/>
+                            </td>
+                            <td>
+                                <t t-esc="line['invoice_date']"/>
+                            </td>
+                            <td>
+                                <t t-esc="line['customer']"/>
                             </td>
                             <td>
                                 <t t-esc="line['employee_name']"/>
+                            </td>
+                            <td>
+                                <t t-esc="line['quantity']"/>
                             </td>
                             <td>
                                 <t t-esc="line['price_unit']"/>
                             </td>
                         </tr>
                     </t>
+                    <tr>
+                        <td colspan="5">
+                            <strong>Total unit price:</strong>
+                        </td>
+                        <td>
+                            <t t-esc="invoice_count"/>
+                        </td>
+                    </tr>
                 </table>
             </t>
         </t>

@@ -31,7 +31,7 @@ class ProjectDashboard(models.TransientModel):
 
         head = ''
         body = ''
-        column_header = ['Invoice name', 'Employee Name', 'Price']
+        column_header = ['Invoice ID', 'Invoice Date', 'Customer Name', 'Engineer Name', 'Quantity', 'Price']
         head += thead.format(th="".join(map(th.format, column_header)))
 
         project_id = self.project_id
@@ -40,27 +40,35 @@ class ProjectDashboard(models.TransientModel):
 --             CREATE OR REPLACE VIEW project_invoice_wizard AS ( 
             SELECT row_number() OVER () AS id,
             line.move_id AS line_id,
-            line.move_name AS line_name,
+            line.move_name AS invoice_name,
+			res.name AS customer,
+			move.invoice_date AS invoice_date,
             emp.name AS employee_name,
+			line.quantity AS quantity,
             line.price_unit AS price_unit
             FROM account_move_line line
             LEFT JOIN account_move move ON move.id = line.move_id
+			LEFT JOIN res_partner res ON res.id = move.commercial_partner_id
             INNER JOIN hr_employee emp ON emp.id = line.project_employee_id
             WHERE move.project_id = {project_id.id}
-            ORDER BY line_name
+            ORDER BY invoice_name
 --             )
         """)
         invoices_data = self._cr.dictfetchall()
+
+        for i in range(0, len(invoices_data)):
+            column_value = [invoices_data[i]['invoice_name'],
+                            invoices_data[i]['invoice_date'],
+                            invoices_data[i]['customer'],
+                            invoices_data[i]['employee_name'],
+                            invoices_data[i]['quantity'],
+                            invoices_data[i]['price_unit']]
+            body += tr.format("".join(map(td.format, column_value)))
+        view_invoices = table.format(thead=head, tbody=body)
+        self.write({'invoices': view_invoices})
+
         data = {
             'form_data': self.read()[0],
             'invoices_data': invoices_data
         }
         return self.env.ref('engineers_management.action_invoice_wizard').report_action(self, data=data)
-
-        for i in range(0, len(fetch_data)):
-            # if self.department_id.id == fetch_data[i][0]:
-            column_value = [fetch_data[i][2], fetch_data[i][3], fetch_data[i][4]]
-            body += tr.format("".join(map(td.format, column_value)))
-        view_invoices = table.format(thead=head, tbody=body)
-        self.write({'invoices': view_invoices})
-
