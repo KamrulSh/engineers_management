@@ -21,7 +21,12 @@
                     <tr>
                         <td>Project Name:</td>
                         <td>
-                            <t t-esc="form_data['project_id'][1]"/>
+                            <t t-if="form_data['project_id'] == false">
+                                All projects invoices
+                            </t>
+                            <t t-else="">
+                                <t t-raw="form_data['project_id'][1]"/>
+                            </t>
                         </td>
                     </tr>
                 </table>

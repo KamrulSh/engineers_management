@@ -10,8 +10,8 @@
                     <field name="project_id"/>
                 </group>
                 <footer>
-                    <button name="action_print_report" type="object" string="Submit" class="btn-primary"/>
-                    <button name="action_print_report" type="object" string="Print" class="btn-primary"/>
+                    <button name="action_preview_report" type="object" string="Preview" class="btn-primary"/>
+                    <button name="action_print_report" type="object" string="Print pdf" class="btn-primary"/>
                 </footer>
                 <group>
                     <field name="invoices" readonly="1"/>
@@ -26,7 +26,7 @@
         <field name="res_model">project.invoice.wizard</field>
         <field name="view_mode">form</field>
         <field name="view_id" ref="project_invoice_form"/>
-        <field name="target">new</field>
+        <field name="target">inline</field>
     </record>
 
     <menuitem id="menu_invoice_project"
