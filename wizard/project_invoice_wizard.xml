@@ -10,8 +10,8 @@
                     <field name="project_id"/>
                 </group>
                 <footer>
-<!--                    <button name="action_preview_report" type="object" string="Preview" class="btn-primary"/>-->
                     <button name="action_print_report" type="object" string="Print PDF" class="btn-primary"/>
+                    <button name="action_print_report_xlsx" type="object" string="Print excel" class="btn-primary"/>
                 </footer>
                 <group>
                     <field name="invoices" readonly="1"/>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_project_invoices" model="ir.actions.report">
+        <field name="name">Project invoice report excel</field>
+        <field name="model">project.invoice.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">engineers_management.report_project_invoices_xlsx</field>
+        <field name="report_file">engineers_management.report_project_invoices_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -40,7 +40,6 @@ class ProjectDashboard(models.TransientModel):
 
     @api.onchange("project_id")
     def action_preview_report(self):
-        project_id = self.env['project.project'].search([], limit=1)
 
         table = """
                     <table border="1" class="o_list_view table table-condensed table-striped o_list_view_ungrouped">
@@ -81,10 +80,19 @@ class ProjectDashboard(models.TransientModel):
         self.write({'invoices': view_invoices})
 
     def action_print_report(self):
+        self.action_preview_report()
         invoices_data = self.invoices_query()
-
         data = {
             'form_data': self.read()[0],
             'invoices_data': invoices_data
         }
         return self.env.ref('engineers_management.action_invoice_wizard').report_action(self, data=data)
+
+    def action_print_report_xlsx(self):
+        self.action_preview_report()
+        invoices_data = self.invoices_query()
+        data = {
+            'form_data': self.read()[0],
+            'invoices_data': invoices_data
+        }
+        return self.env.ref('engineers_management.action_report_project_invoices').report_action(self, data=data)

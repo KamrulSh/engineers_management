@@ -27,6 +27,7 @@
         'wizard/dept_wise_project_dashboard_wizard.xml',
         'wizard/project_invoice_wizard.xml',
         'wizard/invoice_project_print_pdf_wizard.xml',
+        'wizard/invoice_project_report_xlsx_wizard.xml',
         'report/project_report.xml',
         'report/project_report_xlsx.xml',
         'report/project_report_pdf.xml',

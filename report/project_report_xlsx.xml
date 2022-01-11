@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="action_report_patient_card" model="ir.actions.report">
+    <record id="action_report_project_card" model="ir.actions.report">
         <field name="name">Project report excel</field>
         <field name="model">project.project</field>
         <field name="report_type">xlsx</field>
