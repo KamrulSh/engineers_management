@@ -38,7 +38,10 @@ class ProjectDashboard(models.TransientModel):
         invoices_data = self._cr.dictfetchall()
         return invoices_data
 
+    @api.onchange("project_id")
     def action_preview_report(self):
+        project_id = self.env['project.project'].search([], limit=1)
+
         table = """
                     <table border="1" class="o_list_view table table-condensed table-striped o_list_view_ungrouped">
                         <thead>
