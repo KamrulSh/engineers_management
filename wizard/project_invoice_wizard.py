@@ -5,10 +5,11 @@ class ProjectDashboard(models.TransientModel):
     _name = 'project.invoice.wizard'
 
     project_id = fields.Many2one('project.project', string="Project name")
-    invoice_id = fields.Many2one('account.move', string="Invoice name")
+    employee_id = fields.Many2one('hr.employee', string="Employee name")
     invoices = fields.Html("Report invoices")
 
     def invoices_query(self):
+        # print(self.project_id.name, self.employee_id.name)
         select = f"""
                     SELECT row_number() OVER () AS id,
                     line.move_id AS line_id,
@@ -26,11 +27,16 @@ class ProjectDashboard(models.TransientModel):
         where = f"""
                     WHERE move.project_id = {self.project_id.id}
                     """
+        whereAnd = f"""
+                    AND line.project_employee_id = {self.employee_id.id}
+                    """
         orderby = f"""
                     ORDER BY invoice_name
                     """
 
-        if self.project_id:
+        if self.project_id and self.employee_id:
+            self._cr.execute(select + where + whereAnd + orderby)
+        elif self.project_id:
             self._cr.execute(select + where + orderby)
         else:
             self._cr.execute(select + orderby)
@@ -38,7 +44,21 @@ class ProjectDashboard(models.TransientModel):
         invoices_data = self._cr.dictfetchall()
         return invoices_data
 
-    @api.onchange("project_id")
+    @api.onchange('project_id')
+    def _onchange_project(self):
+        if self.project_id:
+            emp_ids = self.env['member.information'].search([('member_id', '=', self.project_id.id)])
+            # print(emp_ids, emp_ids.employee_id.ids)
+
+            if self.employee_id and self.employee_id.id in emp_ids.employee_id.ids:
+                pass
+            else:
+                self.employee_id = False
+
+            res = {'domain': {'employee_id': [('id', 'in', emp_ids.employee_id.ids)]}}
+            return res
+
+    @api.onchange("project_id", "employee_id")
     def action_preview_report(self):
 
         table = """

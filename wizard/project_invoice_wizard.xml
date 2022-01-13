@@ -8,6 +8,7 @@
             <form string="Project Invoice" create="false" edit="false" class="project-dashboard-form">
                 <group>
                     <field name="project_id"/>
+                    <field name="employee_id"/>
                 </group>
                 <footer>
                     <button name="action_print_report" type="object" string="Print PDF" class="btn-primary"/>
