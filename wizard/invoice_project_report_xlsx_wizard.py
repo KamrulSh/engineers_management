@@ -48,8 +48,8 @@ class ProjectInvoiceReportXlsx(models.AbstractModel):
             sheet.write(row, col + 1, line['invoice_date'], date_style)
             sheet.write(row, col + 2, line['customer'], column_data)
             sheet.write(row, col + 3, line['employee_name'], column_data)
-            sheet.write(row, col + 4, line['quantity'], column_data)
-            sheet.write(row, col + 5, line['price_unit'], column_data)
+            sheet.write(row, col + 4, line['quantity'])
+            sheet.write(row, col + 5, line['price_unit'])
             total_price += line['price_unit']
         row += 2
         sheet.merge_range(row, col, row + 1, col + 3, "Total price=", total_row)

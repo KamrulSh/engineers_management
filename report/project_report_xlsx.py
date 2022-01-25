@@ -60,6 +60,6 @@ class ProjectReportXlsx(models.AbstractModel):
                 sheet.write(row, col + 2, line.assigned_from, date_style)
                 sheet.write(row, col + 3, line.assigned_to, date_style)
                 sheet.write(row, col + 4, line.role_id.name, column_data)
-                sheet.write(row, col + 5, line.planned_hour, column_data)
-                sheet.write(row, col + 6, line.worked_hour, column_data)
+                sheet.write(row, col + 5, line.planned_hour)
+                sheet.write(row, col + 6, line.worked_hour)
             row += 2
