@@ -1,5 +1,5 @@
 from odoo import models, fields, api
-
+from lxml import etree
 from odoo.exceptions import ValidationError
 
 
@@ -40,6 +40,19 @@ class EngineerInformation(models.Model):
                 raise ValidationError('Digit can not be greater than 5.')
         else:
             raise ValidationError('Not number.')
+
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
+        result = super().fields_view_get(view_id=view_id, view_type=view_type,
+                                       toolbar=toolbar, submenu=submenu)
+        if view_type == 'form':
+            doc = etree.XML(result['arch'])
+            id_reference = doc.xpath("//field[@name='engineer_id']")
+            if id_reference:
+                id_reference[0].set("string", "Engineer Unique id")
+                id_reference[0].addnext(etree.Element('label', {'string': '5 Digit Id'}))
+                result['arch'] = etree.tostring(doc, encoding='unicode')
+
+        return result
 
 
 class TechnicalSkill(models.Model):
